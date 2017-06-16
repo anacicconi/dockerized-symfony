@@ -1,0 +1,37 @@
+version: '2'
+services:
+  app-service:
+    container_name: ${APP_CONTAINER_NAME}
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+      args:
+        - SITE_NAME=${SITE_NAME}
+        - SERVER_ADMIN=${SERVER_ADMIN}
+        - SERVER_LOCALE=${SERVER_LOCALE}
+        - APACHE_LOG_DIR=${APACHE_LOG_DIR}
+    restart: always
+    ports:
+      - ${APP_EXTERNAL_PORT}:80
+    volumes:
+      - ./www:/var/www
+    environment:
+      - DATABASE_INTERNAL_PORT=${DATABASE_INTERNAL_PORT}
+      - DATABASE_NAME=${DATABASE_NAME_VALUE}
+      - DATABASE_USER=${DATABASE_USER_VALUE}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD_VALUE}
+    links:
+      - sql-service:database
+  sql-service:
+    container_name: ${SQL_CONTAINER_NAME}
+    image: ${SQL_IMAGE}
+    environment:
+      - ${DATABASE_NAME_TAG}=${DATABASE_NAME_VALUE}
+      - ${DATABASE_USER_TAG}=${DATABASE_USER_VALUE}
+      - ${DATABASE_PASSWORD_TAG}=${DATABASE_PASSWORD_VALUE}
+      - ${DATABASE_ROOT_PASSWORD_TAG}=${DATABASE_ROOT_PASSWORD_VALUE}
+    ports:
+      - ${DATABASE_EXTERNAL_PORT}:${DATABASE_INTERNAL_PORT}
+    volumes:
+      - ${DATABASE_EXTERNAL_VOLUME}:${DATABASE_INTERNAL_VOLUME}
+    command: ${DATABASE_COMMAND}
