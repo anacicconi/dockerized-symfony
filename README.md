@@ -25,6 +25,10 @@ https://docs.docker.com/engine/installation/
 
 https://docs.docker.com/compose/install/
 
+#### Install Symfony Installer
+
+https://symfony.com/doc/current/setup.html#creating-symfony-applications
+
 ## What will be installed:
 
 Two Docker container servers. One Apache server containing a Symfony application and one SQL server. The Apache server will use the Symfony version defined on the .env file. The PHP version used is the 7.0. The SQL server can be a MySQL or a MariaDB. By default, it's a MariaDB 10.1.
