@@ -29,6 +29,7 @@ RUN a2enmod rewrite
 
 # Update the PHP.ini file
 RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.0/apache2/php.ini
+RUN sed -i 's/\;date\.timezone\ \=/date\.timezone\ \=\ Europe\/Paris/g' /etc/php/7.0/apache2/php.ini
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php \
