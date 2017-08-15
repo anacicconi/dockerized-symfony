@@ -22,6 +22,7 @@ services:
       - DATABASE_PASSWORD=${DATABASE_PASSWORD_VALUE}
     links:
       - sql-service:database
+    working_dir: /var/www/${SITE_NAME}  
   sql-service:
     container_name: ${SQL_CONTAINER_NAME}
     image: ${SQL_IMAGE}
