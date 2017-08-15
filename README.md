@@ -15,8 +15,6 @@ This is a development environment for a project using Symfony and SQL based on D
 
 ```Eg: http://localhost:8080```
 
-Obs: make sure Docker is running!
-
 ## Requirements:
 
 #### Install Docker
