@@ -13,7 +13,9 @@ This is a development environment for a project using Symfony and SQL based on D
 
 **3) Browse the site!**
 
-```http://localhost:8080```
+```Eg: http://localhost:8080```
+
+Obs: make sure Docker is running!
 
 ## Requirements:
 
@@ -56,7 +58,7 @@ SYMFONY_VERSION: the version of symfony that will be installed. Default: 3.3
 ```
 APP_CONTAINER_NAME: the name of the container that will be created by Docker for the app.
 
-APP_EXTERNAL_PORT: the port where the site will be running on the host. Ex: http://localhost:8080
+APP_EXTERNAL_PORT: the port where the site will be running on the host. Eg: http://localhost:8080
 ```
 
 #### Database configuration
