@@ -111,3 +111,11 @@ parameters:
     database_user: admin
     database_password: admin
 ```
+
+Obs3: all the commands must be run inside the php container.
+
+```
+Eg: docker exec -it <SITE_NAME> php bin/console doctrine:schema:update --force
+```
+
+Remember that the cli of your computer cannot access the database with the same address/host your docker can! 
