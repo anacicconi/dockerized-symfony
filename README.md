@@ -40,7 +40,7 @@ Some of them already have a default value but feel free to change it.
 #### Dockerfile configuration
 
 ```
-SITE_NAME: the name that will be used for the Apache Virtual Host but also for your Symfony project.
+SITE_NAME: the name that will be used for the Apache Virtual Host but also for your Symfony project (no spaces here).
 
 SERVER_ADMIN: the email of the person responsible for the server.
 
