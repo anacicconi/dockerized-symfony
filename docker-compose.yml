@@ -35,4 +35,5 @@ services:
       - ${DATABASE_EXTERNAL_PORT}:${DATABASE_INTERNAL_PORT}
     volumes:
       - ${DATABASE_EXTERNAL_VOLUME}:${DATABASE_INTERNAL_VOLUME}
+    user: mysql  
     command: ${DATABASE_COMMAND}
